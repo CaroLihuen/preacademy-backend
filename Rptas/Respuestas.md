@@ -4,8 +4,7 @@
 
 ## 🔹 Preguntas sobre Java
 
-1. 
-   La clase en un conjunto de datos, ahí se guardan el nobre de la clase y sus atributos o caracteristicas principales que las hacen distintos a otras clases, también contienen métodos y constructores. Los objetos se crean a partir de las clases, sino no podrían existir como bloque de código. 
+1. La clase en un conjunto de datos, ahí se guardan el nobre de la clase y sus atributos o caracteristicas principales que las hacen distintos a otras clases, también contienen métodos y constructores. Los objetos se crean a partir de las clases, sino no podrían existir como bloque de código. 
 2. En Java todo tiene que estar adentro de una clase porque su estructura está conformada de esa manera al ser un lenguaje estructurado orientado a objetos. 
 3. Que se necesita declarar siempre que tipo de dato tiene tal estructura, no pueda no haber nada, y en el caso de que no contenga nada hay que especificarl. 
 4. ¿Qué función cumple el método `main()` en una aplicación Java?

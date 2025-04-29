@@ -1,20 +1,16 @@
-<<<<<<< HEAD:src/main/Initial.java
-package main;
-package models;
-=======
 package main.initial.service;
->>>>>>> upstream/main:src/main/initial/service/Initial.java
+
+import main.models.Persona;
 
 public class Initial {
 
     public static void main(String[] args) {
-        //TODO: Hola chicos 😊 ¡Bienvenidos al primer desafío de Programación Orientada a Objetos en Java!
+        //TODO: Hola chicos 😊 ¡Bienvenidos al primer desafío de Programación Orientada a Objetos en Java
 
         // CONSIGNA 1:
         // Crear un nuevo package dentro del path src/main llamado models.
         // Ese package es donde deben colocar las clases que van a crear a continuación.
        
-
         // CONSIGNA 2:
         // Crear una clase llamada "Persona" dentro del path src/main.
         // La clase debe tener los siguientes atributos privados:
@@ -47,39 +43,22 @@ public class Initial {
         // TODO: ↓ Acá podés comenzar a resolver desde el main:
 
         // ¡A codear!
-        public class Persona{
-            private String nombre;
-            private int edad;
-            private String dni;
 
-            public Persona(String nuevoNombre, int nuevaEdad, String nuevodni){
-               this.nombre = nuevoNombre;
-               this.edad = nuevaEdad;
-               this.dni = nuevodni; 
-            }
-
-            public int getEdad(){
-                return edad;
-            }
-            public String getDni(){
-                return dni;
-            }
-            public String getNombre(){
-                return nombre;
-            }
-            public SetEdad(int nuevaEdad){
-                edad = nuevaEdad;
-            }
-            public SetDni(String nuevoDNI){
-                dni = nuevoDNI;
-            }
-            public SetNombre(String nuevoNombre){
-                nombre = nuevoNombre;
-            }
-
-           /* En constrocución  public mostrarInformacion(String nombre, int edad, String dni){
-            
-            }*/
-        }
+        //Creando nuevas personas
+        Persona mariano = new Persona("Mariano",35,"45683287");
+        Persona julia = new Persona("Julia",27,"35489235");
+        Persona rosario = new Persona("Rosario",18,"38742354");
+        //llamando al métoddo mostratInformación.
+        mariano.mostrarInformacion();
+        julia.mostrarInformacion();
+        
+        //Agregando nueva edadd y después mostrando
+        mariano.SetEdad(8);
+        mariano.mostrarInformacion();
+        
+        //preguntando la edad con su método
+        mariano.esMayorDeEdad();
+        julia.esMayorDeEdad();
+        rosario.esMayorDeEdad();
     }
 }
