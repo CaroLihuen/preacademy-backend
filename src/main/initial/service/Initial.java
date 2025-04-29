@@ -1,5 +1,9 @@
+<<<<<<< HEAD:src/main/Initial.java
 package main;
 package models;
+=======
+package main.initial.service;
+>>>>>>> upstream/main:src/main/initial/service/Initial.java
 
 public class Initial {
 
