@@ -48,6 +48,7 @@ public class Initial {
         Persona mariano = new Persona("Mariano",35,"45683287");
         Persona julia = new Persona("Julia",27,"35489235");
         Persona rosario = new Persona("Rosario",18,"38742354");
+        
         //llamando al métoddo mostratInformación.
         mariano.mostrarInformacion();
         julia.mostrarInformacion();
