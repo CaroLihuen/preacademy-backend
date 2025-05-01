@@ -1,5 +1,7 @@
 package main.bank.service;
 
+import main.models.Cuenta;
+
 public class BankExercice {
     public static void main(String[] args) {
 
@@ -48,6 +50,19 @@ public class BankExercice {
         // TODO: ↓ Acá podés comenzar a resolver desde el main:
 
         // ¡A programar!
+
+        Cuenta numero1 = new Cuenta(25550.00d,"488sg57");
+
+        numero1.mostrarSaldo();
+        numero1.depositar(25000);
+        numero1.retirar(50000);
+        numero1.SetSaldo(10);
+        numero1.mostrarSaldo();
+
+
+
+
+
     }
 }
 

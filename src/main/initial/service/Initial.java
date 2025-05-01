@@ -53,7 +53,7 @@ public class Initial {
         mariano.mostrarInformacion();
         julia.mostrarInformacion();
         
-        //Agregando nueva edadd y después mostrando
+        //Agregando nueva edad y después mostrando
         mariano.SetEdad(8);
         mariano.mostrarInformacion();
         
