@@ -1,6 +1,8 @@
 package main.bank.service;
 
 import main.models.Cuenta;
+import main.models.CuentaCorriente;
+import main.models.CajaAhorro;
 
 public class BankExercice {
     public static void main(String[] args) {
@@ -58,8 +60,22 @@ public class BankExercice {
         numero1.retirar(50000);
         numero1.SetSaldo(10);
         numero1.mostrarSaldo();
+     
+        CajaAhorro numero2 = new CajaAhorro(80010.00d,"7584hj9");
 
+        numero2.mostrarSaldo();
+        numero2.depositar(25000);
+        numero2.retirar(50000);
+        numero2.SetSaldo(10);
+        numero2.mostrarSaldo();
 
+        CuentaCorriente numero3 = new CuentaCorriente(10000.00d,"3518ku8");
+
+        numero3.mostrarSaldo();
+        numero3.depositar(25000);
+        numero3.retirar(50000);
+        numero3.SetSaldo(10);
+        numero3.mostrarSaldo();
 
 
 

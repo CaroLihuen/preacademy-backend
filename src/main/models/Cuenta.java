@@ -15,7 +15,7 @@ public class Cuenta {
 
     public void SetSaldo(double nuevoSaldo) {
         if(saldo == 0){
-            System.out.println("No tiene dinero");
+            System.out.println("No tiene dinero en la Cuenta");
         } else{ 
           saldo = nuevoSaldo;  
         }
@@ -23,22 +23,28 @@ public class Cuenta {
 
     public void depositar(double monto){
         this.saldo = monto + this.saldo;
-        System.out.println("Depósito realizada");
+        System.out.println("Depósito realizado en la Cuenta");
     }
 
     public void retirar(double monto){
         if(monto > 0){
             this.saldo = this.saldo - monto ;
-            System.out.println("Retiro realizada");
+            System.out.println("Retiro realizado en la Cuenta");
         }else{
-
-            System.out.println("Saldo Insuficiente");
+            System.out.println("Saldo Insuficiente en la Cuenta");
         }
     }
 
     public void mostrarSaldo(){
-        System.out.println("El saldo actual es de: "+this.saldo);
+        System.out.println("El saldo actual en la Cuenta es de: "+this.saldo);
     }
+    
+    //me falta repensarlo
+    public static void transferir(Cuenta origen, Cuenta destino, double monto){
+        //if(destino){
+        //    Cuenta numeroNuevo = new Cuenta(monto, null)
+        //}
 
 
+    }
 }
