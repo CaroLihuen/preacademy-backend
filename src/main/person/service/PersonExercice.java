@@ -1,5 +1,7 @@
 package main.person.service;
 
+import main.models.Person;
+
 public class PersonExercice {
     public static void main(String[] args) {
 
@@ -66,6 +68,20 @@ public class PersonExercice {
         // Llamar y probar todos los métodos de instancia desde aquí.
 
         // ¡A programar!
+        
+        //Hay que probar
+        Person mariano =new Person(45683287);
+        Person julia =new Person(35489235,"Julia","Anderson");
+        Person rosario =new Person(38742354,"Rosario","Rondó","3 de diciembre 2010");
+        
+        mariano.infoPerson();
+        julia.infoPerson();
+        rosario.infoPerson();
+
+        mariano.SetNombre("Mariano","Rodriguez");
+        mariano.setEdad("35");
+        mariano.SetFechaNacimiento("15 de enero 1975");
+        
     }
 }
 
