@@ -79,9 +79,20 @@ public class PersonExercice {
         rosario.infoPerson();
 
         mariano.SetNombre("Mariano","Rodriguez");
-        mariano.setEdad("35");
+        mariano.setEdad("15");
         mariano.SetFechaNacimiento("15 de enero 1975");
+        mariano.SetSexo("M");
+        mariano.SetPeso(72);
+        mariano.SetAltura(1.72);
+        mariano.infoPerson();
+
+        mariano.masaCorporal();
+        mariano.estadoFisico();
+        // mariano.fechaCumpleaños(); falta redondear
+        mariano.esMayorDeEdad();
+        mariano.puedeVotar();
         
+
     }
 }
 

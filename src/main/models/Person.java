@@ -1,8 +1,8 @@
 package main.models;
 
 import java.time.LocalDate;
-import java.time.Year;
 import java.time.format.DateTimeFormatter;
+import java.lang.Math;
 
 public class Person {
     private String nombre;
@@ -11,7 +11,7 @@ public class Person {
     private int dni;
     private String sexo;
     private int peso;
-    private int altura;
+    private double altura;
 
     public Person(int nuevoDni) {
         this.dni = nuevoDni;
@@ -48,38 +48,44 @@ public class Person {
         peso = nuevoPeso;
     }
 
-    public void SetAltura(int nuevaAltura) {
+    public void SetAltura(double nuevaAltura) {
         altura = nuevaAltura;
     }
 
-    // Hay que probar
-    public int masaCorporal() {
-        int masaCorporal;
-        masaCorporal = this.peso / (this.altura ^ 2);
+    public double masaCorporal() {
+        double masaCorporal;
+        int peso= this.peso;
+        double altura = this.altura;
+        masaCorporal = peso / Math.pow(altura, 2);
+        System.out.println("La masa corporal es de "+ Math.round(masaCorporal));
         return masaCorporal;
     }
 
     public void estadoFisico(){
-        if(masaCorporal() > 18.5 & masaCorporal() < 25){
-            System.out.println("La persona está en forma");
+        if(masaCorporal() >= 18.5 & masaCorporal() < 25){
+            System.out.println("La persona está en forma, la masa corporal es de: "+Math.round(masaCorporal()));
         } else{
-            System.out.println("Hay que trabajar más en eso..");
+            System.out.println("Hay que trabajar más en eso.., la masa corporal es de: "+Math.round(masaCorporal()));
         }
     }
-
-    public void fechaCumpleaños(String args[]) {
+    
+    //falta redondear probar con otros métodos de fecha
+    //Si fecha de hoy -fecha de nacimiento = edad
+    public void fechaCumpleaños() {
         LocalDate fechaLocal = LocalDate.now();
-        DateTimeFormatter fechaFormateada = DateTimeFormatter.ofPattern("dd-MMM-yyyy");
+        DateTimeFormatter fechaFormateada = DateTimeFormatter.ofPattern("dd-MM-yyyy");
         String fechaHoy = fechaLocal.format(fechaFormateada);
-        System.out.println(this.fechaNacimiento == fechaHoy);
 
+        System.out.println(this.fechaNacimiento == fechaHoy);
     }
 
     public boolean esMayorDeEdad() {
         int nEdad = Integer.parseInt(this.edad);
-        if (nEdad > 18) {
+        if (nEdad >= 18) {
+            System.out.println("Es mayor de 18");
             return true;
         } else {
+            System.out.println("Es menor de 18");
             return false;
         }
     }
