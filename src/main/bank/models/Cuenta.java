@@ -1,4 +1,4 @@
-package main.models;
+package main.bank.models;
 
 //Hacer
 public class Cuenta {
@@ -40,7 +40,7 @@ public class Cuenta {
         System.out.println("El saldo actual en la Cuenta es de: " + this.saldo);
     }
 
-    // me falta repensarlo
+    // me falta repensarlo //podría no ser static
     public static void transferir(Cuenta origen, Cuenta destino, double monto) {
         // if(destino){
         // Cuenta numeroNuevo = new Cuenta(monto, null)

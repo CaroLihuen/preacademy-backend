@@ -1,6 +1,6 @@
 package main.person.service;
 
-import main.models.Person;
+import main.person.models.Person;
 
 public class PersonExercice {
     public static void main(String[] args) {

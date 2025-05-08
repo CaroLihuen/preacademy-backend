@@ -1,4 +1,4 @@
-package main.models;
+package main.bank.models;
 
 public class CuentaCorriente extends Cuenta {
     private double saldo;

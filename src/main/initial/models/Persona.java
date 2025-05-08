@@ -1,4 +1,4 @@
-package main.models;
+package main.initial.models;
 
 public class Persona {
     private String nombre;

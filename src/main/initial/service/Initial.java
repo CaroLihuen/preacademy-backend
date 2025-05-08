@@ -1,6 +1,6 @@
 package main.initial.service;
 
-import main.models.Persona;
+import main.initial.models.Persona;
 
 public class Initial {
 

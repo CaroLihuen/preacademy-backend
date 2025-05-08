@@ -1,4 +1,4 @@
-package main.models;
+package main.serie.models;
 
 public class Episodio {
     

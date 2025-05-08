@@ -1,4 +1,4 @@
-package main.models;
+package main.bank.models;
 
 public class CajaAhorro extends Cuenta {
     private double saldo;
