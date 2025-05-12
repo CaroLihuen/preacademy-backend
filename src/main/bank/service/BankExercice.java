@@ -1,7 +1,7 @@
 package main.bank.service;
 
-import main.bank.models.CajaAhorro;
 import main.bank.models.Cuenta;
+import main.bank.models.CajaAhorro;
 import main.bank.models.CuentaCorriente;
 
 public class BankExercice {
@@ -61,9 +61,9 @@ public class BankExercice {
         // ¡A programar!
 
         // Probando Cuenta
-        Cuenta numero1 = new Cuenta(25550.00d, "488sg57");
+       // Cuenta numero1 = new Cuenta(25550.00d, "488sg57");
 
-        numero1.mostrarSaldo();
+       // numero1.mostrarSaldo();
        // numero1.depositar(25000);
        // numero1.retirar(50000);
        // numero1.SetSaldo(10);
@@ -79,13 +79,12 @@ public class BankExercice {
       //  numero2.mostrarSaldo();
 
         // Probando Cuenta Corriente
-        CuentaCorriente numero3 = new CuentaCorriente(100000, "3518ku8");
+        CuentaCorriente numero3 = new CuentaCorriente(50000, "3518ku8");
 
         numero3.mostrarSaldo();
         //numero3.depositar(25000);
-        //numero3.retirar(50000);
+        numero3.retirar(10000);
         //numero3.SetSaldo(10);
-        //numero3.mostrarSaldo();
-
+        numero3.mostrarSaldo();
     }
 }
