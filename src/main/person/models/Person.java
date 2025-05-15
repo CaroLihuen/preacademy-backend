@@ -30,7 +30,7 @@ public class Person {
     }
 
     public void SetNombre(String nuevoNombre, String nuevoApellido) {
-        nombre = nuevoNombre + nuevoApellido;
+        nombre = nuevoNombre +" "+nuevoApellido;
     }
 
     public void setEdad(String nuevaEdad) {
@@ -58,8 +58,8 @@ public class Person {
         int peso= this.peso;
         double altura = this.altura;
         masaCorporal = peso / Math.pow(altura, 2);
-        System.out.println("La masa corporal es de "+ Math.round(masaCorporal));
-        return masaCorporal;
+        //System.out.println("La masa corporal es de "+ Math.round(masaCorporal));
+        return masaCorporal; 
     }
 
     public void estadoFisico(){
@@ -91,16 +91,17 @@ public class Person {
         }
     }
 
-    // falta redondear
     public void verificarEdad() {
         LocalDate fechaLocal = LocalDate.now();
-        DateTimeFormatter fechaFormateada = DateTimeFormatter.ofPattern("dd-MMM-yyyy");
-        String fechaHoy = fechaLocal.format(fechaFormateada);
-        System.out.println(this.fechaNacimiento == fechaHoy);
-        // fecha actual - fecha de nacimiento = años
-        // años = edad
-        // si coincide genial "La fecha actual coincide"
-        // sino hay algo que no cuadra
+        DateTimeFormatter fechaFormateada = DateTimeFormatter.ofPattern("d 'de' MMMM yyyy", Locale.forLanguageTag("es"));
+        LocalDate fNaci  = LocalDate.parse(this.fechaNacimiento, fechaFormateada);
+
+        int edad = fechaLocal.getYear() - fNaci.getYear();
+        if(edad == Integer.parseInt(this.edad)){
+           System.out.println("La edad coincide con la fecha de nacimiento.");
+        } else{
+           System.out.println("La edad no coincide con la fecha de nacimiento.");
+        }
     }
 
     public void infoPerson() {
