@@ -2,6 +2,7 @@ package main.person.models;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 import java.lang.Math;
 
 public class Person {
@@ -9,8 +10,8 @@ public class Person {
     private String edad;
     private String fechaNacimiento;
     private int dni;
-    private String sexo;
-    private int peso;
+    private String sexo; //podría ser Char
+    private int peso; 
     private double altura;
 
     public Person(int nuevoDni) {
@@ -69,25 +70,16 @@ public class Person {
         }
     }
     
-    //falta redondear probar con otros métodos de fecha
-    //Si fecha de hoy -fecha de nacimiento = edad
     public void fechaCumpleaños() {
         LocalDate fechaLocal = LocalDate.now();
-        DateTimeFormatter fechaFormateada = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-        String fechaHoy = fechaLocal.format(fechaFormateada);
-
-        System.out.println(this.fechaNacimiento == fechaHoy);
+        DateTimeFormatter fechaFormateada = DateTimeFormatter.ofPattern("d 'de' MMMM yyyy", Locale.forLanguageTag("es"));
+        LocalDate fNaci  = LocalDate.parse(this.fechaNacimiento, fechaFormateada);
+        System.out.println( fNaci.getDayOfMonth() == fechaLocal.getDayOfMonth() && fNaci.getMonth() == fechaLocal.getMonth());
     }
 
     public boolean esMayorDeEdad() {
         int nEdad = Integer.parseInt(this.edad);
-        if (nEdad >= 18) {
-            System.out.println("Es mayor de 18");
-            return true;
-        } else {
-            System.out.println("Es menor de 18");
-            return false;
-        }
+        return nEdad >= 18;
     }
 
     public boolean puedeVotar() {

@@ -74,23 +74,23 @@ public class PersonExercice {
         Person julia =new Person(35489235,"Julia","Anderson");
         Person rosario =new Person(38742354,"Rosario","Rondó","3 de diciembre 2010");
         
-        mariano.infoPerson();
-        julia.infoPerson();
-        rosario.infoPerson();
+       // mariano.infoPerson();
+        //julia.infoPerson();
+        //rosario.infoPerson();
 
         mariano.SetNombre("Mariano","Rodriguez");
-        mariano.setEdad("15");
-        mariano.SetFechaNacimiento("15 de enero 1975");
+        mariano.setEdad("5");
+        mariano.SetFechaNacimiento("20 de mayo 1975");
         mariano.SetSexo("M");
         mariano.SetPeso(72);
         mariano.SetAltura(1.72);
         mariano.infoPerson();
 
-        mariano.masaCorporal();
-        mariano.estadoFisico();
-        // mariano.fechaCumpleaños(); falta redondear
+        //mariano.masaCorporal();
+        //mariano.estadoFisico();
+        //mariano.fechaCumpleaños(); 
         mariano.esMayorDeEdad();
-        mariano.puedeVotar();
+        //mariano.puedeVotar();
         
 
     }
