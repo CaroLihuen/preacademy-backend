@@ -40,11 +40,15 @@ public class Cuenta {
         System.out.println("El saldo actual en la Cuenta es de: " + this.saldo);
     }
 
-    // me falta repensarlo //podría no ser static
     public static void transferir(Cuenta origen, Cuenta destino, double monto) {
-        // if(destino){
-        // Cuenta numeroNuevo = new Cuenta(monto, null)
-        // }
+        if(monto > 0 && origen.getSaldo() >=monto ){
+          origen.SetSaldo(origen.getSaldo() - monto);
+          destino.SetSaldo(destino.getSaldo() + monto);
+          System.out.println("Transferencia realizada, el saldo en cuenta de origen es de: "+ origen.getSaldo()+
+          ". El saldo en cuenta destino es de: "+ destino.getSaldo());
+        } else{
+            System.err.println("Ocurrio un error en la transferencia.");
+        }
 
     }
 }

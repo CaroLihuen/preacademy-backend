@@ -10,7 +10,8 @@ public class CuentaCorriente extends Cuenta {
 
     @Override
     public void retirar(double monto) {
-        if (monto < -1000) {
+        double limiteSobregiro = -1000;
+        if ((this.saldo - monto) >= limiteSobregiro) {
             this.saldo = this.saldo - monto;
             System.out.println("Retiro realizado en la Cuenta Corriente, el saldo ahora es de: "+ this.saldo);
         } else {

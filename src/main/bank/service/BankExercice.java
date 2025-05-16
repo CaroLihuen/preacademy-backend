@@ -61,30 +61,32 @@ public class BankExercice {
         // ¡A programar!
 
         // Probando Cuenta
-       // Cuenta numero1 = new Cuenta(25550.00d, "488sg57");
+        Cuenta numero1 = new Cuenta(50550.00d, "488sg57");
+        Cuenta numero4 = new Cuenta(0, "488sg58");
 
-       // numero1.mostrarSaldo();
-       // numero1.depositar(25000);
-       // numero1.retirar(50000);
-       // numero1.SetSaldo(10);
-       // numero1.mostrarSaldo();
+        numero1.mostrarSaldo();
+        numero1.depositar(25000);
+        numero1.retirar(50000);
+        numero1.SetSaldo(10);
+        numero1.mostrarSaldo();
+        Cuenta.transferir(numero1, numero4, 25550);
 
         // Probando Caja de Ahorro
-       // CajaAhorro numero2 = new CajaAhorro(80010.00d, "7584hj9");
+        CajaAhorro numero2 = new CajaAhorro(80010.00d, "7584hj9");
 
-      //  numero2.mostrarSaldo();
-       // numero2.depositar(25000);
-      //  numero2.retirar(50000);
-      //  numero2.SetSaldo(10);
-      //  numero2.mostrarSaldo();
+        numero2.mostrarSaldo();
+        numero2.depositar(25000);
+        numero2.retirar(50000);
+        numero2.SetSaldo(10);
+        numero2.mostrarSaldo();
 
         // Probando Cuenta Corriente
-        CuentaCorriente numero3 = new CuentaCorriente(50000, "3518ku8");
+        CuentaCorriente numero3 = new CuentaCorriente(100000, "3518ku8");
 
         numero3.mostrarSaldo();
-        //numero3.depositar(25000);
+        numero3.depositar(25000);
         numero3.retirar(10000);
-        //numero3.SetSaldo(10);
+        numero3.SetSaldo(10);
         numero3.mostrarSaldo();
     }
 }
