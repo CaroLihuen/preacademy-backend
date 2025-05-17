@@ -63,5 +63,32 @@ public class Electrodomestico {
         peso = nuevoPeso;
     }
 
-    
+    public void verInfo(){
+        System.out.println(this.nombre +", de color: "+ this.color +
+        ", precio: "+ this.precioBase +", consumo energético: " +this.consumoEnergetico 
+        +", peso: "+ this.peso+" Kg.");
+    }
+
+    public void consumo(){
+        if(consumoEnergetico < 45){
+            System.out.println("El electrodomestico es de bajo consumo.");
+        } else{
+            System.out.println("El electrodomestico es de alto consumo.");
+        }
+    }
+
+    public double balance(){
+        double balance =  precioBase / peso ;
+        //System.out.println("El balance es: "+ balance);
+        return balance; 
+    }
+
+    public void altaGama(){
+        if(balance() > 3){
+            System.out.println("El balance es de Alta Gama.");
+        } else{
+            System.out.println("El balance no es de Alta Gama.");
+        }
+    }
+
 }

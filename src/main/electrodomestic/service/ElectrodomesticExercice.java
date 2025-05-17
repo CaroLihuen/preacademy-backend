@@ -1,5 +1,7 @@
 package main.electrodomestic.service;
 
+import main.electrodomestic.models.Electrodomestico;
+
 public class ElectrodomesticExercice {
     public static void main(String[] args) {
 
@@ -48,6 +50,25 @@ public class ElectrodomesticExercice {
         // Mostrar los resultados por consola.
 
         // ¡Éxitos!
+        
+        //Creando nuevos electrodomesticos:
+        Electrodomestico television = new Electrodomestico("Phillip 52'");
+        Electrodomestico aspiradora = new Electrodomestico("Aspiradora P8", 500000, "blanca", 25, 10);
+        
+        television.verInfo();
+        aspiradora.verInfo();
+
+        television.SetColor("negro");
+        television.SetNombre("Television Phillip 52'");
+        television.SetConsumoEnergetico(10);
+        television.SetPeso(50);
+        television.SetPrecioBase(1000);
+        
+        television.verInfo();
+
+        television.consumo();
+        television.balance();
+        television.altaGama();
     }
 }
 
