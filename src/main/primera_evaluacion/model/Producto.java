@@ -30,12 +30,20 @@ public class Producto {
         return this;
     }
 
+    public int getId(){
+        return id;
+    }
+
+    public String getNombre(){
+        return nombre;
+    }
+
     public double getPrecio(){
         return precio; 
     }
 
-    public int getId(){
-        return id;
+    public String getCategoria(){
+        return categoria;
     }
 
     public Producto categoria(String categoria){
