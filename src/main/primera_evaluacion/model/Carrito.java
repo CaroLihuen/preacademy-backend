@@ -4,23 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Carrito {
+  //Atributos: List<ItemCarrito> items, Cupon cupon, Cliente cliente.
   List<ItemCarrito> items;
   Cupon cupon;
   Cliente cliente;
-
-  /*
-   * Atributos: List<ItemCarrito> items, Cupon cupon, Cliente cliente.
-   * Implementar las siguientes funcionalidades:
-   * gi
-   * Dentro de la clase debe incluirse un método que calcule el descuento final
-   * aplicable:
-   * Si hay un cupón, se usa su porcentaje.
-   * Si no hay cupón, aplicar:
-   * 10% si el total supera $10.000
-   * 5% si el total supera $5.000
-   * 0% si no se supera ninguno de esos montos
-   */
-
+  
   // void agregarProducto(Producto producto, int cantidad): Agrega un nuevo
   // producto al carrito con la cantidad indicada.
   // Si el producto ya existe en el carrito, se debe incrementar su cantidad.
