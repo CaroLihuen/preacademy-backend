@@ -55,7 +55,7 @@ También podés sobrescribir hashCode() y equals() en la clase Producto. Para el
      items.add(itCarrito1); 
      //Cupon
      Cupon cupon1 = new Cupon();
-     cupon1.SetPorcentajeDesc(2500);
+     cupon1.SetPorcentajeDesc(10);
 
      //Cliente
      
@@ -68,9 +68,11 @@ También podés sobrescribir hashCode() y equals() en la clase Producto. Para el
      carrito1.obtenerCantidadTotalProductos();
      carrito1.calcularSubtotal();
      carrito1.calcularTotalConDescuento();
-     carrito1.obtenerItemsPorCategoria("jardin");
-     carrito1.mostrarResumen();
-
+     carrito1.obtenerItemsPorCategoria("jardín");
+     carrito1.obtenerItemsPorCategoria("Frios");
+     //carrito1.mostrarResumen();
+     //carrito1.obtenerPromedioPrecioProductos();
+     //carrito1.obtenerCantidadTotalProductos();
     }
 
 }
