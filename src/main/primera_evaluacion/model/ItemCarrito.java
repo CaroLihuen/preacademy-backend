@@ -18,6 +18,7 @@ public class ItemCarrito {
     }
 
     public ItemCarrito cantidad(int cantidad){
+        cantidad= 1;
         this.cantidad = cantidad;
         return this;
     }
