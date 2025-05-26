@@ -1,5 +1,6 @@
 package main.primera_evaluacion.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Carrito {
@@ -9,10 +10,7 @@ public class Carrito {
 
     /*Atributos: List<ItemCarrito> items, Cupon cupon, Cliente cliente.
 Implementar las siguientes funcionalidades:
-List<ItemCarrito> obtenerItemsPorCategoria(String categoria): Devuelve una lista de ítems cuyo producto pertenece a la categoría especificada.
-int obtenerCantidadTotalProductos(): Devuelve la cantidad total de unidades de todos los productos en el carrito.
-double obtenerPromedioPrecioProductos(): Calcula el precio promedio de los productos contenidos en el carrito.
-void mostrarResumen(): Imprime por consola un resumen del contenido del carrito, incluyendo subtotal, descuentos, total, y detalle de productos.
+gi
 Dentro de la clase debe incluirse un método que calcule el descuento final aplicable:
 Si hay un cupón, se usa su porcentaje.
 Si no hay cupón, aplicar:
@@ -23,6 +21,12 @@ Si no hay cupón, aplicar:
    
    //void agregarProducto(Producto producto, int cantidad): Agrega un nuevo producto al carrito con la cantidad indicada. 
    //Si el producto ya existe en el carrito, se debe incrementar su cantidad.
+   public Carrito(List<ItemCarrito> items, Cupon cupon, Cliente cliente){
+      this.items = items;
+      this.cupon = cupon;
+      this.cliente=cliente;
+   }
+
    public void agregarProducto(Producto producto, int cantidad){
     for(int i = 0; i < items.size(); i++){ 
       ItemCarrito item = items.get(i);
@@ -54,18 +58,97 @@ Si no hay cupón, aplicar:
    
    public double calcularSubtotal(){
     //double calcularSubtotal(): Suma los subtotales de todos los ítems del carrito sin aplicar ningún descuento.
-    double subtotal = 1; 
+    double subtotal = 0; 
+    for(int i= 0; i < items.size(); i++){
+        ItemCarrito item = items.get(i);
+        subtotal += item.getCantidad() * item.getProducto().getPrecio();
+    }
     return subtotal;
    }
    
    public double calcularTotalConDescuento(){
      //double calcularTotalConDescuento(): Calcula el total del carrito aplicando 
      //los descuentos correspondientes, ya sea por cupón o por monto total. 
-     double totalDescuento = 1; 
-     return totalDescuento;
+     double subTotal = calcularSubtotal();
+     double descuento = 0;
+     double total;
+     if(this.cupon != null){
+        descuento = descuento + this.cupon.getPorcentajeDesc();
+        total = subTotal - descuento;
+        return total;
+     } else{
+        total = subTotal;
+        return total;
+     }
    }
 
    public void aplicarCupon(Cupon cupon){
     //void aplicarCupon(Cupon cupon):asigna un cupón al carrito para que su porcentaje de descuento sea considerado al calcular el total.
+      this.cupon = cupon;
+   }
+   
+   public List<ItemCarrito> obtenerItemsPorCategoria(String categoria){
+    //Devuelve una lista de ítems cuyo producto pertenece a la categoría especificada.
+    List<ItemCarrito> prodPorCategoria = new ArrayList<>();
+    for(int i = 0; i< this.items.size(); i++){
+      ItemCarrito item = this.items.get(i);
+      if(item.getProducto().getCategoria().equalsIgnoreCase(categoria)){
+        prodPorCategoria.add(item);
+      }
+    }
+    return prodPorCategoria;
+   }
+
+   public int obtenerCantidadTotalProductos(){
+    //Devuelve la cantidad total de unidades de todos los productos en el carrito.
+    int cantidadTotalProd= 0;
+    for(int i=0; i < items.size();i++){
+       ItemCarrito item = items.get(i);
+       cantidadTotalProd = item.getCantidad();
+    }
+    return cantidadTotalProd; 
+   }
+   
+   public double obtenerPromedioPrecioProductos(){
+    //Calcula el precio promedio de los productos contenidos en el carrito.
+    if(items.isEmpty()){
+      System.err.println("No hay nada en el carrito.");;
+    } 
+    double promedioPrecio;
+    int cantProductos = 0;
+    double accumuladoPrecios =0;
+    for(int i=0; i< items.size(); i++){
+      ItemCarrito item = items.get(i);
+      accumuladoPrecios += item.getProducto().getPrecio() * item.getCantidad();
+      cantProductos += item.getCantidad();
+    }
+    promedioPrecio = accumuladoPrecios / cantProductos;
+    return promedioPrecio;
+   } 
+   
+   public void mostrarResumen(){
+    double subtotal = calcularSubtotal();
+    double totalDesc = calcularTotalConDescuento();
+    double descuento = subtotal - totalDesc;
+    
+    System.out.println("--Resumen de la Compra--");
+    //System.out.println("Cliente: "+ this.cliente);
+    System.out.println("--Productos: --");
+    for(int i=0; i< items.size(); i++){
+      ItemCarrito item = items.get(i);
+      System.out.println("--Resumen de la Compra--");
+      System.out.println(" - " + item.getProducto().getNombre());
+      System.out.println("  Cantidad: " + item.getCantidad());
+      System.out.println("  Precio Unit.: $ "+ item.getProducto().getPrecio());
+      System.out.println("  SubTotal: $ " + (item.getCantidad() * item.getProducto().getPrecio()));
+    }
+    System.out.println("     ");
+    System.out.println("-------------------------------");
+    System.out.println("SubTotal: $ "+ subtotal);
+    System.out.println("Descuento: $ "+ descuento);
+    System.out.println("Toral: $ "+ totalDesc);
+    System.out.println("     ");
+    System.out.println("     ");
+    System.out.println("Gracias por su compra!");
    }
 }
