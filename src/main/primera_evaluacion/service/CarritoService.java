@@ -1,5 +1,9 @@
 package main.primera_evaluacion.service;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+
 import main.primera_evaluacion.model.*;
 
 public class CarritoService {
@@ -29,12 +33,44 @@ También podés sobrescribir hashCode() y equals() en la clase Producto. Para el
 
      */
      public static void main(String[] args){ 
+
+     //productos   
      Producto televisor = new Producto().iD(1).nombre("Televisor Phillip 52'").precio(750000).categoria("electrodomestico");
-     
+     Producto crema = new Producto().iD(2).nombre("Dermaglos Ultra").precio(250000).categoria("belleza");
+     Producto heladera = new Producto().iD(3).nombre("Heladera Dream").precio(850000).categoria("electrodomestico");
+     Producto reposera = new Producto().iD(4).nombre("Reposera Stella").precio(80000).categoria("jardín");
+
      System.out.println(televisor);
      televisor.nombre("Televisor Phillip 72'");
      System.out.println(televisor);
      
+     //Items
+     ItemCarrito itCarrito1 = new ItemCarrito(reposera, 0);
+     ItemCarrito itCarrito2 = new ItemCarrito(crema, 3);
+     
+     itCarrito1.calcularSubtotal();
+     itCarrito2.calcularSubtotal();
+
+     List<ItemCarrito> items = new ArrayList<>();
+     items.add(itCarrito1); 
+     //Cupon
+     Cupon cupon1 = new Cupon();
+     cupon1.SetPorcentajeDesc(2500);
+
+     //Cliente
+     
+     Cliente user1 = new Cliente(1, "user1", "ASJ46KK","User One");
+     
+     
+     //Carrito
+     Carrito carrito1 = new Carrito( items, cupon1, user1);
+     carrito1.agregarProducto(reposera,1);
+     carrito1.obtenerCantidadTotalProductos();
+     carrito1.calcularSubtotal();
+     carrito1.calcularTotalConDescuento();
+     carrito1.obtenerItemsPorCategoria("jardin");
+     carrito1.mostrarResumen();
+
     }
 
 }
