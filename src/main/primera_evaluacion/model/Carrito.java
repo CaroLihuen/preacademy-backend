@@ -117,6 +117,13 @@ public class Carrito {
       ItemCarrito item = this.items.get(i);
       if (item.getProducto().getCategoria().equalsIgnoreCase(categoria)) {
         prodPorCategoria.add(item);
+
+        System.out.println("Los items por categoría son: ");
+        for(int p = 0; p < prodPorCategoria.size(); p++){
+        System.out.println(" - "+ prodPorCategoria.get(p).getProducto().getNombre());
+       };
+      } else{
+        System.out.println("No existe esa categoria.");
       }
     }
     return prodPorCategoria;
@@ -129,6 +136,7 @@ public class Carrito {
       ItemCarrito item = items.get(i);
       cantidadTotalProd = item.getCantidad();
     }
+    System.out.println("La cantidad total de productos es: "+cantidadTotalProd);
     return cantidadTotalProd;
   }
 
@@ -147,6 +155,7 @@ public class Carrito {
       cantProductos += item.getCantidad();
     }
     promedioPrecio = accumuladoPrecios / cantProductos;
+    System.out.println("El promedio es "+ promedioPrecio );
     return promedioPrecio;
   }
 
