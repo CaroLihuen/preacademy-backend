@@ -27,7 +27,7 @@ Plus
 Sobrescribir el método compareTo() en la clase Producto para que compare los productos por precio (de menor a mayor).
 Luego, en la clase Carrito, implementar un método:
 List<Producto> obtenerProductosOrdenadosPorPrecio()
-Este método debe devolver una lista con todos los productos del carrito ordenados por precio ascendente. Podés utilizar Collections.sort() o stream().sorted().
+Este método debe devolve r una lista con todos los productos del carrito ordenados por precio ascendente. Podés utilizar Collections.sort() o stream().sorted().
 [Desafío adicional - sobreescritura de métodos]
 También podés sobrescribir hashCode() y equals() en la clase Producto. Para el hashCode() podes usar Objects.hash(...) con los atributos id, nombre y precio. Para el equals() utiliza los mismos atributos.
 
@@ -70,6 +70,8 @@ También podés sobrescribir hashCode() y equals() en la clase Producto. Para el
      carrito1.calcularTotalConDescuento();
      carrito1.obtenerItemsPorCategoria("jardín");
      carrito1.obtenerItemsPorCategoria("Frios");
+     carrito1.quitarProductoPorId(4);
+     carrito1.obtenerCantidadTotalProductos();
      //carrito1.mostrarResumen();
      //carrito1.obtenerPromedioPrecioProductos();
      //carrito1.obtenerCantidadTotalProductos();
