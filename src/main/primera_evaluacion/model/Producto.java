@@ -16,13 +16,20 @@ public class Producto {
     }
     
     public Producto iD(int id){
+        if(id <= 0){ 
+          System.err.println("El Id tiene que tener un valor positivo.");
+        }
         this.id = id;
         return this;
     }
 
     public Producto nombre(String nombre){
+        if(nombre.isBlank()){ 
+          System.err.println("El nombre tiene que tener un valor.");
+        }
         this.nombre = nombre;
         return this;
+       
     }
 
     public Producto precio(double precio){

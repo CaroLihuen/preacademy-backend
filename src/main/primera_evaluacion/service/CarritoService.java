@@ -39,11 +39,12 @@ También podés sobrescribir hashCode() y equals() en la clase Producto. Para el
      Producto crema = new Producto().iD(2).nombre("Dermaglos Ultra").precio(250000).categoria("belleza");
      Producto heladera = new Producto().iD(3).nombre("Heladera Dream").precio(850000).categoria("electrodomestico");
      Producto reposera = new Producto().iD(4).nombre("Reposera Stella").precio(80000).categoria("jardín");
+     Producto televisord = new Producto().iD(10).nombre(" ").precio(750000).categoria("electrodomestico");     
 
-     System.out.println(televisor);
+    // System.out.println(televisor);
      televisor.nombre("Televisor Phillip 72'");
-     System.out.println(televisor);
-     
+     //System.out.println(televisor);
+      System.out.println(televisord);
      //Items
      ItemCarrito itCarrito1 = new ItemCarrito(reposera, 0);
      ItemCarrito itCarrito2 = new ItemCarrito(crema, 3);
@@ -63,7 +64,7 @@ También podés sobrescribir hashCode() y equals() en la clase Producto. Para el
      
      
      //Carrito
-     Carrito carrito1 = new Carrito( items, cupon1, user1);
+    /*  Carrito carrito1 = new Carrito( items, cupon1, user1);
      carrito1.agregarProducto(reposera,1);
      carrito1.obtenerCantidadTotalProductos();
      carrito1.calcularSubtotal();
@@ -71,7 +72,7 @@ También podés sobrescribir hashCode() y equals() en la clase Producto. Para el
      carrito1.obtenerItemsPorCategoria("jardín");
      carrito1.obtenerItemsPorCategoria("Frios");
      carrito1.quitarProductoPorId(4);
-     carrito1.obtenerCantidadTotalProductos();
+     carrito1.obtenerCantidadTotalProductos();*/
      //carrito1.mostrarResumen();
      //carrito1.obtenerPromedioPrecioProductos();
      //carrito1.obtenerCantidadTotalProductos();
