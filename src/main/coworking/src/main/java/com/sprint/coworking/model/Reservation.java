@@ -9,15 +9,17 @@ public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @ManyToOne
+    @JoinColumn(name = "user")
     private User user;
+    @ManyToOne
+    @JoinColumn(name = "room")
     private Room room;
     private LocalDateTime starDateTime;
     private LocalDateTime endDateTime;
-    private List viewings; 
+    private List viewings;
+    @Enumerated(EnumType.STRING)
     private ReservationStatus status;
-    /*  Ver como funciona?
-    @ManyToMany
-    @JoinColumn(name = "nombre_union_tablas")*/
 
     public Reservation(){}
     

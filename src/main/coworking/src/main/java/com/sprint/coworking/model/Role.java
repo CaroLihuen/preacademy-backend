@@ -1,10 +1,17 @@
 package com.sprint.coworking.model;
 
-import jakarta.persistence.Entity;
-
-//@Entity
 public enum Role {
-    ADMIN(),
-    USER();
+    ADMIN("Administrador"),
+    USER("Usuario");
+
+    private String description;
+
+    Role(String description){
+       this.description = description;
+    }
+
+    public String getDescription(){
+        return description;
+    }
 
 }
