@@ -1,13 +1,13 @@
-package com.sprint.coworking;
+package main.segunda_evaluacion.src.main.java.sprint.segunda_evaluacion;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CoworkingApplication {
+public class SegundaEvaluacionApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CoworkingApplication.class, args);
+		SpringApplication.run(SegundaEvaluacionApplication.class, args);
 	}
 
 }

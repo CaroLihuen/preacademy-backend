@@ -1,10 +1,10 @@
-package com.sprint.coworking;
+package sprint.segunda_evaluacion;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class CoworkingApplicationTests {
+class SegundaEvaluacionApplicationTests {
 
 	@Test
 	void contextLoads() {
