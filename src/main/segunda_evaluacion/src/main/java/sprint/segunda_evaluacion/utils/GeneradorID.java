@@ -1,4 +1,4 @@
-package main.segunda_evaluacion.src.main.java.sprint.segunda_evaluacion.utils;
+package sprint.segunda_evaluacion.utils;
 
 public class GeneradorID {
     private static long turnoId = 1;

@@ -1,10 +1,10 @@
-package main.segunda_evaluacion.src.main.java.sprint.segunda_evaluacion.model;
+package sprint.segunda_evaluacion.model;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import main.segunda_evaluacion.src.main.java.sprint.segunda_evaluacion.utils.GeneradorID;
+import sprint.segunda_evaluacion.utils.GeneradorID;
 
 public class Turno {
     private Long id;

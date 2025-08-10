@@ -1,4 +1,4 @@
-package main.segunda_evaluacion.src.main.java.sprint.segunda_evaluacion;
+package sprint.segunda_evaluacion;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,6 +1,6 @@
-package main.segunda_evaluacion.src.main.java.sprint.segunda_evaluacion.model;
+package sprint.segunda_evaluacion.model;
 
-import main.segunda_evaluacion.src.main.java.sprint.segunda_evaluacion.utils.GeneradorID;
+import sprint.segunda_evaluacion.utils.GeneradorID;
 
 public class Profesional {
     private Long id;
